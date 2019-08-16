@@ -31,18 +31,16 @@ const SmurfForm = (props) => {
     e.preventDefault();
     console.log('handleSubmit', newSmurf);
     submitSmurf();
-    setNewSmurf({name:'', age:'', height:''})
+    setNewSmurf({name:'', age:'', height:'', id: ''})
   }
 
-  // const handleEdit = e => {
-  //   e.preventDefault();
-  //   console.log('newSmurf submit', newSmurf);
-  //   axios({
-  //     method: 'post',
-  //     url: `http://localhost:3333/smurfs/${newSmurf.id}`,
-  //     data: newSmurf
-  //   })
-  // }
+  const handleEdit = e => {
+    e.preventDefault();
+    console.log('newSmurf submit', newSmurf);
+    const updatedSmurf = newSmurf
+    axios.put(`http://localhost:3333/smurfs/${updatedSmurf.id}`, updatedSmurf)
+    .then(res => {console.log(res.data)})
+  }
 
 
 return(
@@ -55,11 +53,11 @@ return(
 
       <input type="text" name="height" placeholder="How tall are they?" value={newSmurf.height} onChange={handleChange} />
 
-      {/* <input type="number" name="id" placeholder="Enter a custom ID" value={newSmurf.id} onChange={handleChange} /> */}
+      <input type="number" name="id" placeholder="Enter the ID of smurf to edit" value={newSmurf.id} onChange={handleChange} />
 
       <button type="submit" onClick={handleSubmit}>Add Smurf!</button>
 
-      {/* <button type="submit" onClick={handleEdit}>Edit a Smurf!</button> */}
+      <button type="submit" onClick={handleEdit}>Edit a Smurf!</button>
     </form>
   </div>
   )
