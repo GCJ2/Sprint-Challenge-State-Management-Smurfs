@@ -38,15 +38,22 @@
 }
 
 .smurf-card {
-  margin: 0 20px;
-  width: 30%;
+  margin: 0 20px 10px 20px;
+  width: 20%;
+  /* border: 1px solid black; */
+  padding: 0 10px;
+}
+
+.smurf-card h3 {
+  border-bottom: 1px solid black;
 }
 
 .smurf-form {
   display: flex;
   flex-direction: column;
   width: 75%;
-  margin: auto
+  margin: auto;
+  max-width: 500px;
 }
 
 .smurf-form input {
@@ -62,5 +69,7 @@ button {
   border-radius: 10px;
   margin: 10px 0;
   padding: 5px;
+  background: lightgray;
+  cursor: pointer;
 
 }

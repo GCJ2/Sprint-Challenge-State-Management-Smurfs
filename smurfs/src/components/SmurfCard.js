@@ -15,9 +15,9 @@ return(
   <div className="smurf-card">
     <h3>{props.name}</h3>
     <p>Age: {props.age}</p>
-    <p>Height: {props.height}</p>
+    <p>{props.height}</p>
     <p>ID: {props.id}</p>
-    <button onClick={deleteSmurf}>Delete Smurf</button>
+    <button onClick={deleteSmurf}>Delete</button>
   </div>
   )
 }
