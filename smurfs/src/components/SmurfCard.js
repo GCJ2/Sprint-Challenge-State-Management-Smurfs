@@ -11,10 +11,8 @@ const SmurfCard = (props) => {
 
 return(
 
-
-
-  <div>
-    <h1>{props.name}</h1>
+  <div className="smurf-card">
+    <h3>{props.name}</h3>
     <p>Age: {props.age}</p>
     <p>Height: {props.height}</p>
     <p>ID: {props.id}</p>

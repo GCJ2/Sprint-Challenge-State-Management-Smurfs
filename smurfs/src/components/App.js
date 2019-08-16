@@ -12,6 +12,7 @@ function App () {
     name:'',
     age:'',
     height:'',
+    id: ''
   })
   // console.log(smurfs);
 
