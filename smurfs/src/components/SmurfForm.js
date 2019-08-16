@@ -40,6 +40,7 @@ const SmurfForm = (props) => {
     const updatedSmurf = newSmurf
     axios.put(`http://localhost:3333/smurfs/${updatedSmurf.id}`, updatedSmurf)
     .then(res => {console.log(res.data)})
+    window.location.reload()
   }
 
 
@@ -53,7 +54,7 @@ return(
 
       <input type="text" name="height" placeholder="How tall are they?" value={newSmurf.height} onChange={handleChange} />
 
-      <input type="number" name="id" placeholder="Enter the ID of smurf to edit" value={newSmurf.id} onChange={handleChange} />
+      <input type="number" name="id" placeholder="Editing a smurf? Enter their ID here!" value={newSmurf.id} onChange={handleChange} />
 
       <button type="submit" onClick={handleSubmit}>Add Smurf!</button>
 
