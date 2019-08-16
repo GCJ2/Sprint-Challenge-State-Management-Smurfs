@@ -4,8 +4,8 @@ import SmurfCard from './SmurfCard'
 
 const SmurfList = (props) => {
 
-  const {smurfs, setSmurfs} = useContext(SmurfContext)
-  console.log(smurfs);
+  const {smurfs} = useContext(SmurfContext)
+  // console.log(smurfs);
 
 return(
   <div>

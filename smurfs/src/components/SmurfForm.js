@@ -4,8 +4,8 @@ import axios from 'axios'
 
 const SmurfForm = (props) => {
 
-  const {newSmurf, setNewSmurf, smurfs, setSmurfs} = useContext(SmurfContext)
-  console.log('newSmurf', newSmurf);
+  const {newSmurf, setNewSmurf} = useContext(SmurfContext)
+  // console.log('newSmurf', newSmurf);
 
   const handleChange = e => {
     setNewSmurf({...newSmurf, [e.target.name]: e.target.value})
@@ -19,7 +19,7 @@ const SmurfForm = (props) => {
     console.log('newSmurf submit', newSmurf);
     axios.post('http://localhost:3333/smurfs', newSmurf)
     .then(res => {
-      console.log(res);
+      // console.log(res);
     })
     .catch(err => {
       console.log(err.response.data);
@@ -42,7 +42,7 @@ return(
       <input type="text" name="age" placeholder="How old are they?" value={newSmurf.age} onChange={ageChange} />
 
       <input type="text" name="height" placeholder="How tall are they?" value={newSmurf.height} onChange={handleChange} />
-      <button type="button" onClick={handleSubmit}>Add Smurf!</button>
+      <button type="submit" onClick={handleSubmit}>Add Smurf!</button>
     </form>
   </div>
   )

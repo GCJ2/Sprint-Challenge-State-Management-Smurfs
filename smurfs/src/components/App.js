@@ -13,7 +13,7 @@ function App () {
     age:'',
     height:'',
   })
-        console.log(smurfs);
+  // console.log(smurfs);
 
   useEffect(() => {
     axios
